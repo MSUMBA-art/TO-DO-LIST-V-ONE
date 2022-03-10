@@ -1,0 +1,19 @@
+{
+  "name": "to-do-list-v-one",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MSUMBA-art/TO-DO-LIST-V-ONE.git"
+  },
+  "author": "ALEXANDER",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MSUMBA-art/TO-DO-LIST-V-ONE/issues"
+  },
+  "homepage": "https://github.com/MSUMBA-art/TO-DO-LIST-V-ONE#readme"
+}
