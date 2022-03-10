@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/MSUMBA-art/TO-DO-LIST-V-ONE/issues"
   },
-  "homepage": "https://github.com/MSUMBA-art/TO-DO-LIST-V-ONE#readme"
+  "homepage": "https://github.com/MSUMBA-art/TO-DO-LIST-V-ONE#readme",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3"
+  }
 }
