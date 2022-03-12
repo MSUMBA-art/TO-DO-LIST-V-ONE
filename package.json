@@ -18,6 +18,7 @@
   "homepage": "https://github.com/MSUMBA-art/TO-DO-LIST-V-ONE#readme",
   "dependencies": {
     "body-parser": "^1.19.2",
+    "ejs": "^3.1.6",
     "express": "^4.17.3"
   }
 }
