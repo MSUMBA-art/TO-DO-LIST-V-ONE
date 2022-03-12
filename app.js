@@ -1,18 +1,54 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require("express");
+const bodyParser = require("body-parser");
+const app = express();
 
-app.get('/', (req, res) => {
+app.set("view engine", "ejs");
+
+const port = 3000;
+
+app.get("/", function(req, res)  {
   var today = new Date();
-  var currentDay = today.getDate();
-  if (currentDay === 5 || currentDay === 0) {
-    res.send("its friday");
-  } else {
-    
-    res.sendFile(__dirname + "/index.html")
+  var currentDay = today.getDay();
+  var day = "";
+
+  switch (currentDay) {
+    case 0:
+      day = "Sunday";
+      break;
+
+    case 1:
+      day = "Monday";
+      break;
+
+    case 2:
+      day = "Tuesday";
+      break;
+
+    case 3:
+      day = "Wednesday";
+      break;
+
+    case 4:
+      day = "Thursday";
+      break;
+
+    case 5:
+      day = "Friday";
+      break;
+
+    case 6:
+      day = "Saturday";
+      break;
+
+    default:
+
+    console.log("Error: current day is" + currentDay);
+  
   }
-})
+
+  res.render("list", { kindOfDay: day });
+});
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Example app listening on port ${port}`);
 });
