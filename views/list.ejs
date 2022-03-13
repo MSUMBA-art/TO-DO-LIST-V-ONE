@@ -9,8 +9,14 @@
     
 </head>
 <body>
-    <h1>Its a <%= kindOfDay %> </h1>
+
+    <%if (kindOfDay === "Saturday" || kindOfDay === "Sunday") { %>
+    <h1 style="color: red;">Its a <%= kindOfDay %> ToDo list </h1>
     <p>Why are you not working</p>
+    <%} else {%>
+        <h1 style="color: rgb(68, 19, 202);">Its a <%= kindOfDay %> ToDo list </h1>
+    <p>Why are you not working</p>
+   <% }%>
    
 </body>
 </html>
