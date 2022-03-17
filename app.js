@@ -45,6 +45,10 @@ app.get("/work", function (req, res) {
   res.render("list", { listTitle: "work List", newListItems: workItems });
 });
 
+app.get("/about" , function(req, res) {
+  res.render("about");
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
