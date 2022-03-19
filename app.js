@@ -7,8 +7,8 @@ const date = require(__dirname + "/date.js");
 
 const app = express();
 
-let items = ["Buy Food!", "Eats Food", "Pray & Sleep"];
-let workItems = [];
+const items = ["Buy Food!", "Eats Food", "Pray & Sleep"];
+const workItems = [];
 
 app.set("view engine", "ejs");
 
@@ -19,13 +19,13 @@ app.use(express.static("public"));
 const port = 3000;
 
 app.get("/", function (req, res) {
-  let day = getDate();
+  const day = getDate();
 
   res.render("list", { listTitle: day, newListItems: items });
 });
 
 app.post("/", function (req, res) {
-  let item = req.body.newItem;
+  const item = req.body.newItem;
 
   if (req.body.list === "work") {
     workItems.push(item);
