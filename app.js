@@ -1,10 +1,13 @@
 const express = require("express");
-
 const bodyParser = require("body-parser");
+const { getDate, getDay } = require("./date");
+const date = require(__dirname + "/date.js");
+
+// console.log(date());
 
 const app = express();
 
-let items = ["Buy Food", "Eats", "Sleep"];
+let items = ["Buy Food!", "Eats Food", "Pray & Sleep"];
 let workItems = [];
 
 app.set("view engine", "ejs");
@@ -16,16 +19,7 @@ app.use(express.static("public"));
 const port = 3000;
 
 app.get("/", function (req, res) {
-  let today = new Date();
-
-  let options = {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  };
-
-  let day = today.toLocaleDateString("en-US", options);
+  let day = getDate();
 
   res.render("list", { listTitle: day, newListItems: items });
 });
@@ -41,11 +35,12 @@ app.post("/", function (req, res) {
     res.redirect("/");
   }
 });
+
 app.get("/work", function (req, res) {
   res.render("list", { listTitle: "work List", newListItems: workItems });
 });
 
-app.get("/about" , function(req, res) {
+app.get("/about", function (req, res) {
   res.render("about");
 });
 
